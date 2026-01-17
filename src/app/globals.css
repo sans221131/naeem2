@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+:root {
+	/* Core */
+	--bg: #070A12;
+	--surface-1: #0B1220;
+	--surface-2: #101A2E;
+	--border: #1F2A44;
+
+	/* Text */
+	--text-1: #E5E7EB;
+	--text-2: #AAB4C5;
+	--text-3: #7C879B;
+
+	/* Brand */
+	--primary: #3B82F6;
+	--primary-600: #2563EB;
+	--primary-700: #1D4ED8;
+	--accent: #A3E635;
+
+	/* Buttons */
+	--btn-primary-bg: #3B82F6;
+	--btn-primary-hover: #2563EB;
+	--btn-primary-active: #1D4ED8;
+	--btn-primary-text: #06101F;
+	--btn-primary-ring: #93C5FD;
+	
+	--btn-secondary-bg: #101A2E;
+	--btn-secondary-hover: #14213A;
+	--btn-secondary-text: #E5E7EB;
+	--btn-secondary-border: #1F2A44;
+	
+	--btn-ghost-hover: #101A2E;
+	--btn-ghost-text: #E5E7EB;
+
+	/* Links */
+	--link: #60A5FA;
+	--link-hover: #93C5FD;
+	--link-visited: #A78BFA;
+
+	/* Inputs */
+	--input-bg: #0B1220;
+	--input-border: #22304F;
+	--input-focus-border: #3B82F6;
+	--input-focus-ring: #1D4ED8;
+	--placeholder: #7C879B;
+
+	/* Chips / Tags */
+	--chip-bg: #0F1D36;
+	--chip-text: #93C5FD;
+	--chip-border: #1F2A44;
+
+	/* Status */
+	--success: #22C55E;
+	--warning: #FBBF24;
+	--error: #F87171;
+	--info: #38BDF8;
+
+	/* Legacy compatibility */
+	--background: var(--bg);
+	--foreground: var(--text-1);
+	--card-surface: var(--surface-1);
+	--text-muted: var(--text-3);
+	--primary-ocean: var(--primary);
+	--accent-sunset: var(--accent);
+	--border-color: var(--border);
+}
+
+@theme inline {
+	--color-background: var(--bg);
+	--color-foreground: var(--text-1);
+	--color-primary: var(--primary);
+	--color-accent: var(--accent);
+	--color-surface-1: var(--surface-1);
+	--color-surface-2: var(--surface-2);
+	--color-border: var(--border);
+	--color-text-1: var(--text-1);
+	--color-text-2: var(--text-2);
+	--color-text-3: var(--text-3);
+	--color-success: var(--success);
+	--color-warning: var(--warning);
+	--color-error: var(--error);
+	--color-info: var(--info);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+}
+
+body {
+	background: var(--bg);
+	color: var(--text-1);
+	font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Scrollbar hide utility for Tailwind */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animation for success message */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Scale in animation */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out;
+}
+
+/* Smooth hover transitions */
+.smooth-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-3);
+}
+
+/* Gradient shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  background-size: 1000px 100%;
+}
