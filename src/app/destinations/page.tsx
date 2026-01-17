@@ -68,20 +68,20 @@ export default function DestinationsPage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <main className="min-h-screen bg-[var(--bg)]">
       {/* Header */}
-      <div className="bg-white border-b border-gray-100">
+      <div className="bg-[var(--surface-1)] border-b border-[var(--border)]">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-12">
-          <nav className="flex items-center gap-2 text-sm text-gray-600 mb-6">
-            <Link href="/" className="hover:text-blue-600 transition">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-[var(--text-2)] mb-6">
+            <Link href="/" className="hover:text-[var(--primary)] transition">Home</Link>
             <span>/</span>
-            <span className="text-gray-900 font-semibold">All Destinations</span>
+            <span className="text-[var(--text-1)] font-semibold">All Destinations</span>
           </nav>
           
-          <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-6xl font-black text-[var(--text-1)] mb-4">
             Explore All Destinations
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl">
+          <p className="text-lg md:text-xl text-[var(--text-2)] max-w-3xl">
             Discover amazing activities and experiences across {countries.length} incredible destinations worldwide
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function DestinationsPage() {
           {countries.map((country) => (
             <div
               key={country.id}
-              className="group relative h-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ring-1 ring-black/5 hover:ring-blue-500/20 bg-white"
+              className="group relative h-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ring-1 ring-[var(--border)] hover:ring-[var(--primary)]/50 bg-[var(--surface-1)]"
             >
               {/* Image Link */}
               <Link
@@ -117,7 +117,7 @@ export default function DestinationsPage() {
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-3xl">{country.flag}</span>
                   </div>
-                  <h3 className="text-2xl font-black text-white mb-1 group-hover:text-blue-300 transition-colors">
+                  <h3 className="text-2xl font-black text-white mb-1 group-hover:text-[var(--primary)] transition-colors">
                     {country.name}
                   </h3>
                   <div className="flex items-center gap-2 text-white/80 text-sm">
@@ -129,7 +129,7 @@ export default function DestinationsPage() {
                 </div>
 
                 {/* Hover Effect Border */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/30 rounded-2xl transition-colors pointer-events-none" />
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[var(--primary)]/50 rounded-2xl transition-colors pointer-events-none" />
               </Link>
 
               {/* Enquire Now Button */}
@@ -140,7 +140,7 @@ export default function DestinationsPage() {
                     e.stopPropagation();
                     setIsContactOpen(true);
                   }}
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-[#0EA5A4] to-[#0EA5A4]/90 hover:from-[#0EA5A4]/90 hover:to-[#0EA5A4] text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all smooth-hover active:scale-95"
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--primary-600)] hover:from-[var(--primary-600)] hover:to-[var(--primary-700)] text-white font-bold text-sm shadow-lg hover:shadow-xl transition-all smooth-hover active:scale-95"
                 >
                   Enquire Now
                 </button>
@@ -151,23 +151,23 @@ export default function DestinationsPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 py-16">
+      <div className="bg-gradient-to-r from-[var(--primary)] to-[var(--primary-600)] py-16">
         <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
             Can&apos;t find your destination?
           </h2>
-          <p className="text-lg text-blue-100 mb-8">
+          <p className="text-lg text-white/80 mb-8">
             We&apos;re constantly adding new destinations. Contact us to suggest your favorite location!
           </p>
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all"
+          <button
+            onClick={() => setIsContactOpen(true)}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[var(--primary)] rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all"
           >
             Get in Touch
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </Link>
+          </button>
         </div>
       </div>
 

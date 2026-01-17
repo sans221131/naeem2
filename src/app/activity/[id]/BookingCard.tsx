@@ -16,17 +16,17 @@ export default function BookingCard({ price, currency }: BookingCardProps) {
     : price ?? "—";
 
   return (
-    <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg ring-1 ring-black/5 overflow-hidden p-4">
+    <div className="bg-[var(--surface-1)] rounded-xl sm:rounded-2xl shadow-lg ring-1 ring-[var(--border)] overflow-hidden p-4">
       <div className="text-center">
-        <p className="text-xs text-gray-500 font-semibold">Starting from</p>
-        <p className="text-3xl font-black text-gray-900 mt-2">{formattedPrice}</p>
-        <p className="text-xs text-gray-500 mt-1">per person</p>
+        <p className="text-xs text-[var(--text-3)] font-semibold">Starting from</p>
+        <p className="text-3xl font-black text-[var(--text-1)] mt-2">{formattedPrice}</p>
+        <p className="text-xs text-[var(--text-3)] mt-1">per person</p>
       </div>
 
       <div className="mt-4">
         <button
           onClick={() => setOpen(true)}
-          className="w-full h-11 flex items-center justify-center py-3 rounded-xl bg-gradient-to-r from-[#0EA5A4] to-[#0EA5A4]/90 text-white font-bold shadow-md hover:shadow-lg transition"
+          className="w-full h-11 flex items-center justify-center py-3 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--primary-600)] hover:from-[var(--primary-600)] hover:to-[var(--primary-700)] text-white font-bold shadow-md hover:shadow-lg transition"
         >
           Enquire Now
         </button>

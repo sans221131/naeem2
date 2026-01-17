@@ -636,22 +636,22 @@ export default function DestinationPage() {
   const activeActivities = activities.filter(a => a.isActive);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <main className="min-h-screen bg-[var(--bg)]">
       {/* Breadcrumb */}
-      <div className="bg-white">
+      <div className="bg-[var(--surface-1)] border-b border-[var(--border)]">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-4">
-          <nav className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-blue-600 transition">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-[var(--text-2)]">
+            <Link href="/" className="hover:text-[var(--primary)] transition">Home</Link>
             <span>/</span>
-            <Link href="/destinations" className="hover:text-blue-600 transition">Destinations</Link>
+            <Link href="/destinations" className="hover:text-[var(--primary)] transition">Destinations</Link>
             <span>/</span>
-            <span className="text-gray-900 font-semibold">{destination?.name || id}</span>
+            <span className="text-[var(--text-1)] font-semibold">{destination?.name || id}</span>
           </nav>
         </div>
       </div>
 
       {/* Hero Section */}
-      <div className="bg-white pb-8">
+      <div className="bg-[var(--surface-1)] pb-8">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="relative h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-2xl">
             {destination?.image && (
@@ -683,14 +683,14 @@ export default function DestinationPage() {
       {/* Description Section */}
       {destination?.description?.length ? (
         <div className="max-w-7xl mx-auto px-4 md:px-8 pb-12">
-          <div className="bg-gradient-to-br from-white via-[#FAF7F2] to-white rounded-3xl border border-[#E7E2D9] shadow-[0_20px_60px_-35px_rgba(0,0,0,0.3)] overflow-hidden">
+          <div className="bg-[var(--surface-1)] rounded-3xl border border-[var(--border)] shadow-[0_20px_60px_-35px_rgba(0,0,0,0.3)] overflow-hidden">
             <div className="p-8 md:p-12">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
                 {/* Left: Content */}
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="h-1 w-12 bg-gradient-to-r from-[#0EA5A4] to-[#0EA5A4]/50 rounded-full"></div>
-                    <h2 className="text-3xl md:text-4xl font-black text-[#0F172A]">
+                    <h2 className="text-3xl md:text-4xl font-black text-[var(--text-1)]">
                       About {destination.name}
                     </h2>
                   </div>
@@ -699,9 +699,9 @@ export default function DestinationPage() {
                     {destination.description.map((line, index) => (
                       <div key={index} className="flex items-start gap-3 group">
                         <div className="flex-shrink-0 mt-1.5">
-                          <div className="h-2 w-2 rounded-full bg-[#0EA5A4] group-hover:scale-125 transition-transform"></div>
+                          <div className="h-2 w-2 rounded-full bg-[var(--primary)] group-hover:scale-125 transition-transform"></div>
                         </div>
-                        <p className="text-lg text-[#64748B] leading-relaxed">{line}</p>
+                        <p className="text-lg text-[var(--text-2)] leading-relaxed">{line}</p>
                       </div>
                     ))}
                   </div>
@@ -709,30 +709,30 @@ export default function DestinationPage() {
 
                 {/* Right: CTA Card */}
                 <div className="lg:w-80 flex-shrink-0">
-                  <div className="bg-white rounded-2xl border border-[#E7E2D9] shadow-lg p-6 sticky top-24">
+                  <div className="bg-[var(--surface-2)] rounded-2xl border border-[var(--border)] shadow-lg p-6 sticky top-24">
                     <div className="text-center mb-4">
                       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#0EA5A4] to-[#0EA5A4]/80 mb-4">
                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
-                      <h3 className="text-xl font-bold text-[#0F172A] mb-2">
+                      <h3 className="text-xl font-bold text-[var(--text-1)] mb-2">
                         Plan Your Trip
                       </h3>
-                      <p className="text-sm text-[#64748B]">
+                      <p className="text-sm text-[var(--text-2)]">
                         Get personalized recommendations and exclusive deals
                       </p>
                     </div>
                     
                     <button
                       onClick={() => setIsContactOpen(true)}
-                      className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#0EA5A4] to-[#0EA5A4]/90 hover:from-[#0EA5A4]/90 hover:to-[#0EA5A4] text-white font-bold text-base shadow-md hover:shadow-xl transition-all smooth-hover active:scale-95 mb-3"
+                      className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--primary-600)] hover:from-[var(--primary-600)] hover:to-[var(--primary-700)] text-white font-bold text-base shadow-md hover:shadow-xl transition-all smooth-hover active:scale-95 mb-3"
                     >
                       Enquire Now
                     </button>
                     
-                    <div className="flex items-center justify-center gap-2 text-xs text-[#64748B]">
-                      <svg className="w-4 h-4 text-[#0EA5A4]" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="flex items-center justify-center gap-2 text-xs text-[var(--text-3)]">
+                      <svg className="w-4 h-4 text-[var(--primary)]" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span>Free consultation • Quick response</span>
@@ -749,20 +749,20 @@ export default function DestinationPage() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {activeActivities.length === 0 ? (
           <div className="text-center py-20">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 mb-6">
-              <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[var(--surface-2)] mb-6">
+              <svg className="w-10 h-10 text-[var(--text-3)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-1)] mb-3">
               No activities found
             </h2>
-            <p className="text-gray-600 mb-8 max-w-md mx-auto">
+            <p className="text-[var(--text-2)] mb-8 max-w-md mx-auto">
               We&apos;re currently adding activities for {destination?.name || id}. Check back soon!
             </p>
             <Link
               href="/destinations"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--primary)] text-white rounded-full font-semibold hover:bg-[var(--primary-600)] transition"
             >
               Browse Other Destinations
             </Link>
@@ -770,10 +770,10 @@ export default function DestinationPage() {
         ) : (
           <>
             <div className="mb-8">
-              <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-2">
+              <h2 className="text-2xl md:text-3xl font-black text-[var(--text-1)] mb-2">
                 Available Activities
               </h2>
-              <p className="text-gray-600">
+              <p className="text-[var(--text-2)]">
                 Explore the best experiences in {destination?.name || id}
               </p>
             </div>

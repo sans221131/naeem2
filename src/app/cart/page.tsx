@@ -31,28 +31,28 @@ export default function CartPage() {
 
   if (itemCount === 0) {
     return (
-      <main className="min-h-screen bg-gradient-to-b from-[#FAF7F2] to-white">
+      <main className="min-h-screen bg-[var(--bg)]">
         <div className="max-w-4xl mx-auto px-4 md:px-8 py-16">
           <div className="text-center py-20 animate-fade-in">
-            <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-[#FAF7F2] mb-6 ring-2 ring-[#E7E2D9] animate-scale-in">
-              <ShoppingBag className="w-12 h-12 text-[#64748B]" />
+            <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-[var(--surface-2)] mb-6 ring-2 ring-[var(--border)] animate-scale-in">
+              <ShoppingBag className="w-12 h-12 text-[var(--text-3)]" />
             </div>
-            <h1 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-3">
+            <h1 className="text-3xl md:text-4xl font-black text-[var(--text-1)] mb-3">
               Your Cart is Empty
             </h1>
-            <p className="text-[#64748B] mb-8 max-w-md mx-auto">
+            <p className="text-[var(--text-2)] mb-8 max-w-md mx-auto">
               Start exploring our amazing destinations and activities to plan your next adventure!
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/destinations"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#0EA5A4] to-[#0EA5A4]/90 text-white rounded-full font-semibold hover:from-[#0EA5A4]/90 hover:to-[#0EA5A4] transition-all smooth-hover shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-600)] text-white rounded-full font-semibold hover:from-[var(--primary-600)] hover:to-[var(--primary-700)] transition-all smooth-hover shadow-lg hover:shadow-xl"
               >
                 Browse Destinations
               </Link>
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#0F172A] rounded-full font-semibold hover:bg-[#FAF7F2] transition-all smooth-hover ring-2 ring-[#E7E2D9] hover:ring-[#0EA5A4]"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--surface-1)] text-[var(--text-1)] rounded-full font-semibold hover:bg-[var(--surface-2)] transition-all smooth-hover ring-2 ring-[var(--border)] hover:ring-[var(--primary)]"
               >
                 Go Home
               </Link>
@@ -67,10 +67,10 @@ export default function CartPage() {
   const currencies = Array.from(new Set(items.map(item => item.currency)));
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#FAF7F2] to-white">
+    <main className="min-h-screen bg-[var(--bg)]">
       {/* Success Message */}
       {showSuccessMessage && (
-        <div className="fixed top-4 right-4 z-50 bg-[#0EA5A4] text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 animate-slide-in">
+        <div className="fixed top-4 right-4 z-50 bg-[var(--primary)] text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 animate-slide-in">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
@@ -91,27 +91,27 @@ export default function CartPage() {
       )}
 
       {/* Header */}
-      <div className="bg-white border-b border-[#E7E2D9]">
+      <div className="bg-[var(--surface-1)] border-b border-[var(--border)]">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-12">
-          <nav className="flex items-center gap-2 text-sm text-[#64748B] mb-6 animate-fade-in">
-            <Link href="/" className="hover:text-[#0EA5A4] transition-colors smooth-hover">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-[var(--text-2)] mb-6 animate-fade-in">
+            <Link href="/" className="hover:text-[var(--primary)] transition-colors smooth-hover">Home</Link>
             <span>/</span>
-            <span className="text-[#0F172A] font-semibold">Cart</span>
+            <span className="text-[var(--text-1)] font-semibold">Cart</span>
           </nav>
           
           <div className="flex items-center justify-between animate-fade-in">
             <div>
-              <h1 className="text-4xl md:text-5xl font-black text-[#0F172A] mb-2">
+              <h1 className="text-4xl md:text-5xl font-black text-[var(--text-1)] mb-2">
                 Your Cart
               </h1>
-              <p className="text-lg text-[#64748B]">
+              <p className="text-lg text-[var(--text-2)]">
                 {itemCount} {itemCount === 1 ? 'item' : 'items'} selected
               </p>
             </div>
             {itemCount > 0 && (
               <button
                 onClick={clearCart}
-                className="px-4 py-2 text-sm font-semibold text-[#F97316] hover:text-[#F97316]/80 hover:bg-[#F97316]/10 rounded-lg transition-all smooth-hover"
+                className="px-4 py-2 text-sm font-semibold text-[var(--error)] hover:text-[var(--error)]/80 hover:bg-[var(--error)]/10 rounded-lg transition-all smooth-hover"
               >
                 Clear All
               </button>
@@ -128,7 +128,7 @@ export default function CartPage() {
             {items.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl shadow-md ring-1 ring-[#E7E2D9] overflow-hidden hover:shadow-lg hover:ring-[#0EA5A4]/50 transition-all smooth-hover hover:-translate-y-1 animate-fade-in"
+                className="bg-[var(--surface-1)] rounded-2xl shadow-md ring-1 ring-[var(--border)] overflow-hidden hover:shadow-lg hover:ring-[var(--primary)]/50 transition-all smooth-hover hover:-translate-y-1 animate-fade-in"
               >
                 <div className="flex gap-4 p-4 md:p-6">
                   {/* Image */}
@@ -152,21 +152,21 @@ export default function CartPage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-4 mb-2">
                       <div>
-                        <span className="inline-block px-2 py-1 rounded-md bg-[#0EA5A4]/10 text-[#0EA5A4] text-xs font-semibold mb-2">
+                        <span className="inline-block px-2 py-1 rounded-md bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-semibold mb-2">
                           {item.type === 'activity' ? 'Activity' : 'Destination'}
                         </span>
-                        <h3 className="text-lg md:text-xl font-bold text-[#0F172A] line-clamp-2">
+                        <h3 className="text-lg md:text-xl font-bold text-[var(--text-1)] line-clamp-2">
                           {item.name}
                         </h3>
                         {item.destinationName && (
-                          <p className="text-sm text-[#64748B] mt-1">
+                          <p className="text-sm text-[var(--text-2)] mt-1">
                             {item.destinationName}
                           </p>
                         )}
                       </div>
                       <button
                         onClick={() => removeFromCart(item.id)}
-                        className="flex-shrink-0 p-2 text-[#F97316] hover:bg-[#F97316]/10 rounded-lg transition-all smooth-hover"
+                        className="flex-shrink-0 p-2 text-[var(--error)] hover:bg-[var(--error)]/10 rounded-lg transition-all smooth-hover"
                         aria-label="Remove item"
                       >
                         <Trash2 className="w-5 h-5" />
@@ -174,12 +174,12 @@ export default function CartPage() {
                     </div>
 
                     <div className="flex items-center justify-between mt-4">
-                      <div className="text-lg md:text-xl font-black text-[#0F172A]">
+                      <div className="text-lg md:text-xl font-black text-[var(--text-1)]">
                         {item.price > 0 ? `${item.currency} ${item.price.toFixed(2)}` : 'Free'}
                       </div>
                       <Link
                         href={item.type === 'activity' ? `/activity/${item.id}` : `/destination/${item.destinationId}`}
-                        className="text-sm font-semibold text-[#0EA5A4] hover:text-[#0EA5A4]/80 hover:underline transition-colors smooth-hover"
+                        className="text-sm font-semibold text-[var(--primary)] hover:text-[var(--primary-600)] hover:underline transition-colors smooth-hover"
                       >
                         View Details →
                       </Link>
@@ -192,13 +192,13 @@ export default function CartPage() {
 
           {/* Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl shadow-lg ring-1 ring-[#E7E2D9] p-6 sticky top-4 animate-fade-in">
-              <h2 className="text-2xl font-black text-[#0F172A] mb-6">
+            <div className="bg-[var(--surface-1)] rounded-2xl shadow-lg ring-1 ring-[var(--border)] p-6 sticky top-4 animate-fade-in">
+              <h2 className="text-2xl font-black text-[var(--text-1)] mb-6">
                 Summary
               </h2>
 
               <div className="space-y-4 mb-6">
-                <div className="flex items-center justify-between text-[#64748B]">
+                <div className="flex items-center justify-between text-[var(--text-2)]">
                   <span>Items</span>
                   <span className="font-semibold">{itemCount}</span>
                 </div>
@@ -210,17 +210,17 @@ export default function CartPage() {
                   if (currencyTotal === 0) return null;
                   
                   return (
-                    <div key={currency} className="flex items-center justify-between text-[#64748B]">
+                    <div key={currency} className="flex items-center justify-between text-[var(--text-2)]">
                       <span>Total ({currency})</span>
                       <span className="font-semibold">{currencyTotal.toFixed(2)}</span>
                     </div>
                   );
                 })}
 
-                <div className="pt-4 border-t-2 border-[#E7E2D9]">
+                <div className="pt-4 border-t-2 border-[var(--border)]">
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold text-[#0F172A]">Total</span>
-                      <span className="text-2xl font-black text-[#0F172A]">
+                    <span className="text-lg font-bold text-[var(--text-1)]">Total</span>
+                      <span className="text-2xl font-black text-[var(--text-1)]">
                       {currencies.length === 1 && items.some(item => Number(item.price) > 0)
                         ? `${currencies[0]} ${totalPrice.toFixed(2)}`
                         : 'Mixed'}
@@ -231,12 +231,12 @@ export default function CartPage() {
 
               <button
                 onClick={handleCheckout}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#0EA5A4] to-[#0EA5A4]/90 hover:from-[#0EA5A4]/90 hover:to-[#0EA5A4] text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 smooth-hover"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--primary-600)] hover:from-[var(--primary-600)] hover:to-[var(--primary-700)] text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 smooth-hover"
               >
                 Proceed to Checkout
               </button>
 
-              <p className="text-xs text-[#64748B] text-center mt-4">
+              <p className="text-xs text-[var(--text-3)] text-center mt-4">
                 Items in cart are not reserved. Complete booking to secure your spots.
               </p>
             </div>

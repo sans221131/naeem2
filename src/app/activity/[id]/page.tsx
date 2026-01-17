@@ -128,7 +128,7 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <main className="min-h-screen bg-[var(--bg)]">
       {/* Mobile Hero Section - Completely redesigned */}
       <div className="lg:hidden">
         {/* Compact Image Header */}
@@ -160,17 +160,17 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
         </div>
 
         {/* Title Card - Overlapping design */}
-        <div className="relative -mt-8 mx-3 bg-white rounded-2xl shadow-xl p-4 mb-4">
-          <h1 className="text-xl font-black text-gray-900 leading-tight mb-3">
+        <div className="relative -mt-8 mx-3 bg-[var(--surface-1)] rounded-2xl shadow-xl p-4 mb-4 border border-[var(--border)]">
+          <h1 className="text-xl font-black text-[var(--text-1)] leading-tight mb-3">
             {activity.name}
           </h1>
           
           {/* Price & Quick Actions Row */}
           <div className="flex items-center justify-between gap-3">
             <div className="flex flex-col">
-              <span className="text-xs text-gray-500 font-semibold">From</span>
-              <span className="text-2xl font-black text-blue-600">{formatPrice()}</span>
-              <span className="text-xs text-gray-500">per person</span>
+              <span className="text-xs text-[var(--text-3)] font-semibold">From</span>
+              <span className="text-2xl font-black text-[var(--primary)]">{formatPrice()}</span>
+              <span className="text-xs text-[var(--text-3)]">per person</span>
             </div>
             
             {/* Quick Booking CTA removed (cart system disabled) */}
@@ -179,39 +179,39 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
 
         {/* Breadcrumb - Moved below title */}
         <div className="px-3 mb-4">
-          <nav className="flex items-center gap-2 text-xs text-gray-500 overflow-x-auto scrollbar-hide">
-            <Link href="/" className="hover:text-blue-600 transition whitespace-nowrap">Home</Link>
+          <nav className="flex items-center gap-2 text-xs text-[var(--text-2)] overflow-x-auto scrollbar-hide">
+            <Link href="/" className="hover:text-[var(--primary)] transition whitespace-nowrap">Home</Link>
             <span>/</span>
-            <Link href="/activities" className="hover:text-blue-600 transition whitespace-nowrap">Activities</Link>
+            <Link href="/activities" className="hover:text-[var(--primary)] transition whitespace-nowrap">Activities</Link>
             <span>/</span>
-            <span className="text-gray-900 font-medium truncate">{activity.name}</span>
+            <span className="text-[var(--text-1)] font-medium truncate">{activity.name}</span>
           </nav>
         </div>
 
         {/* Mobile Content Sections */}
         <div className="px-3 pb-4 space-y-3">
           {/* Overview Card */}
-          <div className="bg-white rounded-xl p-4 shadow-md">
-            <h2 className="text-base font-black text-gray-900 mb-2 flex items-center gap-2">
+          <div className="bg-[var(--surface-1)] rounded-xl p-4 shadow-md border border-[var(--border)]">
+            <h2 className="text-base font-black text-[var(--text-1)] mb-2 flex items-center gap-2">
               <span>📋</span>
               <span>Overview</span>
             </h2>
-            <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+            <p className="text-sm text-[var(--text-2)] leading-relaxed whitespace-pre-line">
               {parsed.overview}
             </p>
           </div>
 
           {/* Highlights Card */}
           {parsed.highlights.length > 0 && (
-            <div className="bg-white rounded-xl p-4 shadow-md">
-              <h2 className="text-base font-black text-gray-900 mb-3 flex items-center gap-2">
+            <div className="bg-[var(--surface-1)] rounded-xl p-4 shadow-md border border-[var(--border)]">
+              <h2 className="text-base font-black text-[var(--text-1)] mb-3 flex items-center gap-2">
                 <span>✨</span>
                 <span>Highlights</span>
               </h2>
               <ul className="space-y-2">
                 {parsed.highlights.map((highlight, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <li key={idx} className="flex items-start gap-2 text-sm text-[var(--text-2)]">
+                    <svg className="w-5 h-5 text-[var(--success)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     <span>{highlight}</span>
@@ -223,15 +223,15 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
 
           {/* Inclusions Card */}
           {parsed.inclusions.length > 0 && (
-            <div className="bg-white rounded-xl p-4 shadow-md">
-              <h2 className="text-base font-black text-gray-900 mb-3 flex items-center gap-2">
+            <div className="bg-[var(--surface-1)] rounded-xl p-4 shadow-md border border-[var(--border)]">
+              <h2 className="text-base font-black text-[var(--text-1)] mb-3 flex items-center gap-2">
                 <span>✅</span>
                 <span>What&apos;s Included</span>
               </h2>
               <ul className="space-y-2">
                 {parsed.inclusions.map((inclusion, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                    <svg className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <li key={idx} className="flex items-start gap-2 text-sm text-[var(--text-2)]">
+                    <svg className="w-4 h-4 text-[var(--primary)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     <span>{inclusion}</span>
@@ -243,15 +243,15 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
 
           {/* Exclusions Card */}
           {parsed.exclusions.length > 0 && (
-            <div className="bg-white rounded-xl p-4 shadow-md">
-              <h2 className="text-base font-black text-gray-900 mb-3 flex items-center gap-2">
+            <div className="bg-[var(--surface-1)] rounded-xl p-4 shadow-md border border-[var(--border)]">
+              <h2 className="text-base font-black text-[var(--text-1)] mb-3 flex items-center gap-2">
                 <span>❌</span>
                 <span>Not Included</span>
               </h2>
               <ul className="space-y-2">
                 {parsed.exclusions.map((exclusion, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                    <svg className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <li key={idx} className="flex items-start gap-2 text-sm text-[var(--text-2)]">
+                    <svg className="w-4 h-4 text-[var(--error)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                     </svg>
                     <span>{exclusion}</span>
@@ -262,15 +262,15 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
           )}
 
           {parsed.extraSections.map((section, sectionIndex) => (
-            <div key={sectionIndex} className="bg-white rounded-xl p-4 shadow-md">
-              <h2 className="text-base font-black text-gray-900 mb-3 flex items-center gap-2">
+            <div key={sectionIndex} className="bg-[var(--surface-1)] rounded-xl p-4 shadow-md border border-[var(--border)]">
+              <h2 className="text-base font-black text-[var(--text-1)] mb-3 flex items-center gap-2">
                 <span>🧾</span>
                 <span>{section.title}</span>
               </h2>
               <ul className="space-y-2">
                 {section.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start gap-2 text-sm text-gray-700">
-                    <svg className="w-4 h-4 text-slate-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <li key={itemIndex} className="flex items-start gap-2 text-sm text-[var(--text-2)]">
+                    <svg className="w-4 h-4 text-[var(--text-3)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0 1 1 0 002 0zm-1 3a1 1 0 00-1 1v5a1 1 0 002 0V9a1 1 0 00-1-1z" clipRule="evenodd" />
                     </svg>
                     <span>{item}</span>
@@ -281,14 +281,14 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
           ))}
 
           {/* Important Info Card */}
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 shadow-md border border-amber-200">
-            <h2 className="text-base font-black text-gray-900 mb-3 flex items-center gap-2">
+          <div className="bg-gradient-to-br from-[var(--surface-2)] to-[var(--surface-1)] rounded-xl p-4 shadow-md border border-[var(--border)]">
+            <h2 className="text-base font-black text-[var(--text-1)] mb-3 flex items-center gap-2">
               <span>ℹ️</span>
               <span>Good to Know</span>
             </h2>
-            <ul className="space-y-2 text-sm text-gray-700">
+            <ul className="space-y-2 text-sm text-[var(--text-2)]">
               <li className="flex items-start gap-2">
-                <svg className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-[var(--info)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
                 <span>Instant confirmation</span>
@@ -325,20 +325,20 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
       {/* Desktop Layout - Keep original design */}
       <div className="hidden lg:block">
         {/* Breadcrumb */}
-        <div className="bg-white">
+        <div className="bg-[var(--surface-1)] border-b border-[var(--border)]">
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 sm:py-4">
-            <nav className="flex items-center gap-2 text-xs sm:text-sm text-gray-600 overflow-x-auto scrollbar-hide">
-              <Link href="/" className="hover:text-blue-600 transition whitespace-nowrap">Home</Link>
+            <nav className="flex items-center gap-2 text-xs sm:text-sm text-[var(--text-2)] overflow-x-auto scrollbar-hide">
+              <Link href="/" className="hover:text-[var(--primary)] transition whitespace-nowrap">Home</Link>
               <span className="flex-shrink-0">/</span>
-              <Link href="/activities" className="hover:text-blue-600 transition whitespace-nowrap">Activities</Link>
+              <Link href="/activities" className="hover:text-[var(--primary)] transition whitespace-nowrap">Activities</Link>
               <span className="flex-shrink-0">/</span>
-              <span className="text-gray-900 font-semibold truncate">{activity.name}</span>
+              <span className="text-[var(--text-1)] font-semibold truncate">{activity.name}</span>
             </nav>
           </div>
         </div>
 
         {/* Hero Image Section with Overlay */}
-        <div className="bg-white pb-4 sm:pb-8">
+        <div className="bg-[var(--surface-1)] pb-4 sm:pb-8">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <div className="relative h-[350px] md:h-[450px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
               {activity.imageUrl ? (
@@ -377,7 +377,7 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
                   <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white mb-2 sm:mb-4 drop-shadow-2xl leading-tight line-clamp-3">
                     {activity.name}
                   </h1>
-                  <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-lg shadow-xl">
+                  <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-600)] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-lg shadow-xl">
                     <span>From {formatPrice()}</span>
                   </div>
                 </div>
@@ -392,28 +392,28 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
             {/* Left Column - Details */}
             <div className="lg:col-span-2 space-y-8">
               {/* Overview */}
-              <section className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg ring-1 ring-black/5">
+              <section className="bg-[var(--surface-1)] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg ring-1 ring-[var(--border)]">
 
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-[var(--text-1)] mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
                 <span className="text-lg sm:text-xl md:text-2xl">📋</span>
                 Overview
               </h2>
-              <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+              <p className="text-sm sm:text-base md:text-lg text-[var(--text-2)] leading-relaxed whitespace-pre-line">
                 {parsed.overview}
               </p>
             </section>
 
             {/* Highlights */}
             {parsed.highlights.length > 0 && (
-              <section className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg ring-1 ring-black/5">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+              <section className="bg-[var(--surface-1)] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg ring-1 ring-[var(--border)]">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-[var(--text-1)] mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
                   <span className="text-lg sm:text-xl md:text-2xl">✨</span>
                   Highlights
                 </h2>
                 <ul className="space-y-2 sm:space-y-3">
                   {parsed.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <li key={idx} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-[var(--text-2)]">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--success)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span>{highlight}</span>
@@ -425,15 +425,15 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
 
             {/* Inclusions */}
             {parsed.inclusions.length > 0 && (
-              <section className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg ring-1 ring-black/5">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+              <section className="bg-[var(--surface-1)] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg ring-1 ring-[var(--border)]">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-[var(--text-1)] mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
                   <span className="text-lg sm:text-xl md:text-2xl">✅</span>
                   What&apos;s Included
                 </h2>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
                   {parsed.inclusions.map((inclusion, idx) => (
-                    <li key={idx} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700">
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <li key={idx} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-[var(--text-2)]">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--primary)] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span>{inclusion}</span>
@@ -445,15 +445,15 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
 
             {/* Exclusions */}
             {parsed.exclusions.length > 0 && (
-              <section className="bg-white rounded-2xl p-6 md:p-8 shadow-lg ring-1 ring-black/5">
-                <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                  <span className="text-red-600">❌</span>
+              <section className="bg-[var(--surface-1)] rounded-2xl p-6 md:p-8 shadow-lg ring-1 ring-[var(--border)]">
+                <h2 className="text-2xl md:text-3xl font-black text-[var(--text-1)] mb-6 flex items-center gap-3">
+                  <span className="text-[var(--error)]">❌</span>
                   What&apos;s Not Included
                 </h2>
                 <ul className="space-y-3">
                   {parsed.exclusions.map((exclusion, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-gray-700">
-                      <svg className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <li key={idx} className="flex items-start gap-3 text-[var(--text-2)]">
+                      <svg className="w-5 h-5 text-[var(--error)] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                       </svg>
                       <span>{exclusion}</span>
@@ -464,15 +464,15 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
             )}
 
             {parsed.extraSections.map((section, sectionIndex) => (
-              <section key={sectionIndex} className="bg-white rounded-2xl p-6 md:p-8 shadow-lg ring-1 ring-black/5">
-                <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                  <span className="text-slate-600">🧾</span>
+              <section key={sectionIndex} className="bg-[var(--surface-1)] rounded-2xl p-6 md:p-8 shadow-lg ring-1 ring-[var(--border)]">
+                <h2 className="text-2xl md:text-3xl font-black text-[var(--text-1)] mb-6 flex items-center gap-3">
+                  <span className="text-[var(--text-3)]">🧾</span>
                   {section.title}
                 </h2>
                 <ul className="space-y-3">
                   {section.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-3 text-gray-700">
-                      <svg className="w-5 h-5 text-slate-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <li key={itemIndex} className="flex items-start gap-3 text-[var(--text-2)]">
+                      <svg className="w-5 h-5 text-[var(--text-3)] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0 1 1 0 002 0zm-1 3a1 1 0 00-1 1v5a1 1 0 002 0V9a1 1 0 00-1-1z" clipRule="evenodd" />
                       </svg>
                       <span>{item}</span>
@@ -483,14 +483,14 @@ export default async function ActivityPage({ params }: ActivityPageProps) {
             ))}
 
             {/* Important Information */}
-            <section className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 md:p-8 shadow-lg ring-1 ring-amber-200">
-              <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                <span className="text-amber-600">ℹ️</span>
+            <section className="bg-gradient-to-br from-[var(--surface-2)] to-[var(--surface-1)] rounded-2xl p-6 md:p-8 shadow-lg ring-1 ring-[var(--border)]">
+              <h2 className="text-2xl md:text-3xl font-black text-[var(--text-1)] mb-6 flex items-center gap-3">
+                <span className="text-[var(--info)]">ℹ️</span>
                 Important Information
               </h2>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-[var(--text-2)]">
                 <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-amber-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-[var(--info)] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                   </svg>
                   <span>Instant confirmation upon booking</span>
