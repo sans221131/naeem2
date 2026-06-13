@@ -223,21 +223,21 @@ export default function HeroBanner({
       className="relative w-full bg-gradient-to-b from-[var(--bg)] via-[var(--surface-1)] to-[var(--bg)] lg:h-[var(--heroH)] animate-fade-in"
     >
       {/* IMPORTANT: make the container take full hero height on desktop */}
-      <div className="mx-auto max-w-7xl px-4 py-6 lg:h-full">
+      <div className="mx-auto max-w-7xl px-3 py-4 sm:px-4 sm:py-6 lg:h-full">
         {/* Card fills height */}
         <div
-          className="h-auto rounded-[32px] bg-[var(--surface-1)] shadow-[0_30px_80px_-40px_rgba(0,0,0,0.4)] ring-2 ring-[var(--border)] lg:h-full smooth-hover"
+          className="h-auto overflow-hidden rounded-[28px] bg-[var(--surface-1)] shadow-[0_24px_70px_-45px_rgba(0,0,0,0.55)] ring-1 ring-[var(--border)] lg:h-full smooth-hover"
           onMouseEnter={() => (hoverRef.current = true)}
           onMouseLeave={() => (hoverRef.current = false)}
         >
           {/* Grid fills height. min-h-0 is CRUCIAL so inner scroll works */}
-          <div className="grid gap-8 p-6 md:p-8 lg:h-full lg:min-h-0 lg:grid-cols-12 lg:items-stretch">
+          <div className="grid gap-3 p-2 sm:p-3 md:p-8 lg:h-full lg:min-h-0 lg:grid-cols-12 lg:items-stretch">
             {/* LEFT */}
             <div className="lg:col-span-7 lg:flex lg:h-full lg:min-h-0 lg:flex-col">
               {/* Image box takes remaining height */}
               <div className="relative overflow-hidden rounded-[22px] bg-slate-100 ring-1 ring-[var(--border)] lg:flex-1 lg:min-h-0">
                 {/* full height (no aspect ratio) so it fits viewport */}
-                <div className="relative h-[340px] md:h-[420px] lg:h-full">
+                <div className="relative aspect-[4/3] w-full overflow-hidden md:h-[420px] md:aspect-auto lg:h-full">
                   {/* prev layer */}
                   {previous && motionPref !== "reduce" ? (
                     prevImg ? (
@@ -272,34 +272,34 @@ export default function HeroBanner({
                     </div>
                   )}
 
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" />
 
-                  <div className="absolute left-2 sm:left-4 top-2 sm:top-4 flex flex-wrap gap-1.5 sm:gap-2">
+                  <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
                     {destinationId ? (
-                      <span className="rounded-full bg-[var(--surface-1)]/90 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-[var(--text-1)] ring-1 ring-[var(--border)] backdrop-blur animate-scale-in">
+                      <span className="rounded-full bg-black/45 px-2.5 py-1 text-[10px] font-bold text-white ring-1 ring-white/15 backdrop-blur-md">
                         {String(destinationId).toUpperCase()}
                       </span>
                     ) : null}
-                    <span className="rounded-full bg-[var(--primary)]/90 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-white ring-1 ring-[var(--primary)] backdrop-blur animate-scale-in">
+                    <span className="rounded-full bg-[var(--primary)] px-2.5 py-1 text-[10px] font-bold text-white shadow-sm">
                       {priceLabel === "Free Entry" ? "FREE" : "TOP PICK"}
                     </span>
                     {reviewsLabel ? (
-                      <span className="rounded-full bg-[var(--surface-1)]/90 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold text-[var(--text-1)] ring-1 ring-[var(--border)] backdrop-blur animate-scale-in">
+                      <span className="rounded-full bg-black/45 px-2.5 py-1 text-[10px] font-bold text-white ring-1 ring-white/15 backdrop-blur-md">
                         {reviewsLabel}
                       </span>
                     ) : null}
                   </div>
 
-                  <div className="absolute bottom-4 left-4 right-16 md:right-20">
+                  <div className="absolute bottom-12 left-3 right-3 lg:bottom-4 lg:left-4 lg:right-20">
                     <h2
-                      className="text-base sm:text-lg font-bold text-white drop-shadow md:text-xl whitespace-nowrap overflow-hidden truncate"
+                      className="line-clamp-2 text-lg font-extrabold leading-tight text-white drop-shadow md:text-xl lg:block lg:whitespace-nowrap lg:overflow-hidden lg:truncate"
                       title={title}
                     >
                       {title}
                     </h2>
                     {summary ? (
                       <p
-                        className="mt-1 text-sm text-white/85 drop-shadow whitespace-nowrap overflow-hidden truncate"
+                        className="mt-1 line-clamp-2 text-xs leading-relaxed text-white/85 drop-shadow sm:text-sm lg:block lg:whitespace-nowrap lg:overflow-hidden lg:truncate"
                         title={summary}
                       >
                         {summary}
@@ -311,19 +311,19 @@ export default function HeroBanner({
                     <>
                       <button
                         onClick={prevFn}
-                        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 rounded-full bg-[var(--surface-2)]/75 p-2 sm:p-3 shadow-lg ring-1 ring-[var(--border)] backdrop-blur hover:bg-[var(--surface-2)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] smooth-hover"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/35 p-2 shadow-lg ring-1 ring-white/15 backdrop-blur-md hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-white/40 smooth-hover"
                         aria-label="Previous"
                       >
-                        <svg className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--text-1)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                       </button>
                       <button
                         onClick={next}
-                        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 rounded-full bg-[var(--surface-2)]/75 p-2 sm:p-3 shadow-lg ring-1 ring-[var(--border)] backdrop-blur hover:bg-[var(--surface-2)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] smooth-hover"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/35 p-2 shadow-lg ring-1 ring-white/15 backdrop-blur-md hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-white/40 smooth-hover"
                         aria-label="Next"
                       >
-                        <svg className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--text-1)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </button>
@@ -340,12 +340,49 @@ export default function HeroBanner({
                       />
                     </div>
                   ) : null}
+
+                  {len > 1 ? (
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between lg:hidden">
+                      <div className="flex items-center gap-1.5">
+                        {activities.slice(0, 7).map((a, i) => (
+                          <button
+                            key={(a as Activity).id ?? `${(a as Activity).name}-${i}`}
+                            onClick={() => goTo(i)}
+                            className={`smooth-hover ${
+                              i === active
+                                ? "h-2 w-5 rounded-full bg-white"
+                                : "h-2 w-2 rounded-full bg-white/35 hover:bg-white/60"
+                            }`}
+                            aria-label={`Go to slide ${i + 1}`}
+                          />
+                        ))}
+                        {len > 7 ? <span className="text-[11px] font-bold text-white/70">+{len - 7}</span> : null}
+                      </div>
+
+                      <button
+                        onClick={() => setPaused((p) => !p)}
+                        className="rounded-full bg-black/40 px-3 py-1.5 text-[11px] font-bold text-white ring-1 ring-white/15 backdrop-blur-md"
+                        aria-label={paused ? "Resume autoplay" : "Pause autoplay"}
+                      >
+                        {paused ? "Resume" : "Pause"}
+                      </button>
+                    </div>
+                  ) : null}
                 </div>
+              </div>
+
+              <div className="mt-3 lg:hidden">
+                <Link
+                  href={`/activity/${current.id}`}
+                  className="block rounded-2xl bg-[var(--primary)] px-4 py-3 text-center text-sm font-semibold text-white hover:bg-[var(--primary-600)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] smooth-hover"
+                >
+                  View details
+                </Link>
               </div>
 
               {/* Dots row stays compact */}
               {len > 1 ? (
-                <div className="mt-3 flex items-center justify-between gap-3">
+                <div className="mt-3 hidden items-center justify-between gap-3 lg:flex">
                   <div className="flex items-center gap-2">
                     {activities.slice(0, 7).map((a, i) => (
                       <button
@@ -372,7 +409,7 @@ export default function HeroBanner({
             </div>
 
             {/* RIGHT */}
-            <div className="lg:col-span-5 lg:h-full lg:min-h-0">
+            <div className="hidden lg:col-span-5 lg:block lg:h-full lg:min-h-0">
               {/* Right panel is flex column; middle scrolls */}
               <div className="flex h-full min-h-0 flex-col rounded-[22px] bg-[var(--surface-1)] ring-1 ring-[var(--border)]">
                 {/* Top (fixed) */}
