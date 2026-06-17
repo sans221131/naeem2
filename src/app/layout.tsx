@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "YourBrand Tours - Discover Amazing Activities",
+	title: "naveefintech - Discover Amazing Activities",
 	description: "Book unforgettable experiences around the world",
 };
 

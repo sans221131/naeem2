@@ -255,7 +255,7 @@ export default function ContactForm({ onClose, cartItems, onSuccess }: ContactFo
           </button>
 
           <p className="text-[11px] text-[var(--text-3)] text-center">
-            By submitting, you agree to receive communications from YourBrand Tours
+            By submitting, you agree to receive communications from naveefintech
           </p>
         </form>
       </div>

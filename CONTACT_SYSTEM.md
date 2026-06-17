@@ -7,7 +7,7 @@ Complete contact and enquiry management system integrated with the cart function
 
 ### 1. **Database Schema** (`db/schema.ts`)
 The `enquiries` table stores all contact form submissions with:
-- `siteId` - Tracks which brand/domain (set to "yourbrand-tours")
+- `siteId` - Tracks which brand/domain (set to "naveefintech")
 - `sourcePage` - Page where enquiry originated
 - `destinationId` - Optional destination reference
 - `activityId` - Optional activity reference
@@ -37,7 +37,7 @@ The `enquiries` table stores all contact form submissions with:
 - POST endpoint for submitting enquiries
 - Automatically enriches message with:
   - Cart items details (name, type, destination, price)
-  - Site name: "YourBrand Tours"
+  - Site name: "naveefintech"
   - Source page information
   - Submission timestamp
 - Extracts destination and activity IDs from cart
@@ -65,8 +65,8 @@ The `enquiries` table stores all contact form submissions with:
 
 Site information is configured in the API route:
 ```typescript
-const SITE_NAME = "YourBrand Tours";
-const SITE_ID = "yourbrand-tours";
+const SITE_NAME = "naveefintech";
+const SITE_ID = "naveefintech";
 ```
 
 These values are automatically included in every enquiry message for tracking purposes.
@@ -78,7 +78,7 @@ When a user submits an enquiry with cart items, the message is enriched with:
 ```
 [User's message]
 
---- Selected Items from YourBrand Tours ---
+--- Selected Items from naveefintech ---
 
 • Activity Name (Activity) - Paris - EUR 99.99
 • Destination Name (Destination) - London
@@ -86,7 +86,7 @@ When a user submits an enquiry with cart items, the message is enriched with:
 Total Items: 2
 
 --- Site Information ---
-Site: YourBrand Tours
+Site: naveefintech
 Source Page: /cart
 Submitted: 2026-01-11T...
 ```

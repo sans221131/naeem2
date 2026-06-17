@@ -45,7 +45,7 @@ export default function Header() {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-extrabold text-[var(--primary)] hover:text-[var(--primary-600)] transition-all smooth-hover animate-fade-in tracking-tight">
-                YourBrand Tours
+                naveefintech
               </Link>
             </div>
 

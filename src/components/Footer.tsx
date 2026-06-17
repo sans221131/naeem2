@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="animate-fade-in">
-            <h3 className="text-2xl font-extrabold mb-5 text-[var(--primary)] tracking-tight">YourBrand Tours</h3>
+            <h3 className="text-2xl font-extrabold mb-5 text-[var(--primary)] tracking-tight">naveefintech</h3>
             <p className="text-[var(--text-3)] text-base mb-6">
               Discover amazing experiences around the world
             </p>
@@ -58,8 +58,8 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-[var(--text-1)]">Contact & Support</h4>
             <ul className="space-y-2 text-sm text-[var(--text-3)]">
               <li>
-                <a href="mailto:support@yourbrand.com" className="hover:text-[var(--primary)] smooth-hover transition-colors">
-                  support@yourbrand.com
+                <a href="mailto:support@naveefintech.com" className="hover:text-[var(--primary)] smooth-hover transition-colors">
+                  support@naveefintech.com
                 </a>
               </li>
               <li>
@@ -78,7 +78,7 @@ export default function Footer() {
         <div className="border-t border-[var(--border)] mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-[var(--text-3)]">
-              © 2026 YourBrand Tours. All rights reserved.
+              &copy; 2026 naveefintech. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <Link href="/privacy" className="text-sm text-[var(--text-3)] hover:text-[var(--primary)] smooth-hover transition-colors">
