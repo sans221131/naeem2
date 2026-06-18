@@ -44,8 +44,8 @@ export default function Header() {
           <div className="flex items-center justify-between h-[72px]">
             {/* Logo */}
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-extrabold text-[var(--primary)] hover:text-[var(--primary-600)] transition-all smooth-hover animate-fade-in tracking-tight">
-                naveefintech
+              <Link href="/" className="text-sm sm:text-base lg:text-xl xl:text-2xl font-extrabold text-[var(--primary)] hover:text-[var(--primary-600)] transition-all smooth-hover animate-fade-in tracking-tight">
+                NAVEE FINTECH PRIVATE LIMITED
               </Link>
             </div>
 

@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="animate-fade-in">
-            <h3 className="text-2xl font-extrabold mb-5 text-[var(--primary)] tracking-tight">naveefintech</h3>
+            <h3 className="text-2xl font-extrabold mb-5 text-[var(--primary)] tracking-tight">NAVEE FINTECH PRIVATE LIMITED</h3>
             <p className="text-[var(--text-3)] text-base mb-6">
               Discover amazing experiences around the world
             </p>
@@ -67,6 +67,9 @@ export default function Footer() {
                   +1 234 567 890
                 </a>
               </li>
+              <li className="leading-relaxed">
+                OFFICE NO S/32, 2ND FLOOR, AL EZZ TOWER, SBUT SECTOR 6, BHENDI BAZAAR, MUMBAI 400 003.
+              </li>
               <li className="pt-2">
                 <ContactButton variant="primary" className="inline-block py-2 px-4 text-sm" />
               </li>
@@ -78,7 +81,7 @@ export default function Footer() {
         <div className="border-t border-[var(--border)] mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-[var(--text-3)]">
-              &copy; 2026 naveefintech. All rights reserved.
+              &copy; 2026 NAVEE FINTECH PRIVATE LIMITED. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <Link href="/privacy" className="text-sm text-[var(--text-3)] hover:text-[var(--primary)] smooth-hover transition-colors">
